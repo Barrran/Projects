@@ -5,3 +5,7 @@
 - 🌱 I’m currently trying to get better at html, css, and javascript
 - 💞️ I’m looking to become a full-stack programmer.
 - 📫 You can reach me on Discord @barrran :)
+
+- Portfolio/Portfolio/VScode files/portfolio.html
+
+- https://github.com/Barrran/Projects/blob/master/Portfolio/Portfolio/VScode%20files/portfolio.html
