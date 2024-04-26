@@ -7,3 +7,5 @@
 - 📫 You can reach me on Discord @barrran :)
 
 - Portfolio/Portfolio/VScode files/portfolio.html
+
+- https://github.com/Barrran/Projects/blob/master/Portfolio/Portfolio/VScode%20files/portfolio.html
