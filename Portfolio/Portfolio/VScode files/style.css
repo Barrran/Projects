@@ -1,4 +1,18 @@
 body {
+    background-color: black;
+    width: auto;
+    height: auto;
+}
+
+footer {
+    background-color: black;
+    width: auto;
+    height: 50px;
     display: block;
-    background-image: url("Portfolio\Portfolio\images\3b326eee6e2930349b2cf59b21ede69e_co7vj1de878c738acgc0_image.png");
+}
+
+p {
+    color: blue;
+    text-align: center;
+    
 }
