@@ -24,13 +24,14 @@ h2 {
 
 #completedUpcoming h2 {
     display: inline-flex;
-    justify-content: center;
+    
 }
 
-#portfolioProjects {
-    display: block;
+#portfolioProjects h2 {
+    display: inline-block;
     width: 100%;
     display: contents;
+    justify-content: center;
     align-items: center;
     align-content: center;
     align-self: center;
