@@ -23,12 +23,31 @@
 
     <body>
         <main>
-
+            <h1>Contact Me</h1>
+            <form action="" method="get">
+                <label for="name">Enter your name: </label>
+                <input type="text" name="name" id="name" required />
+                <br>
+                <br>
+                <label for="email">Enter your email: </label>
+                <input type="email" name="email" id="email" required />
+                <br>
+                <br>
+                <fieldset>
+                    <legend>Did you enjoy your stay?</legend>
+                        <input type="radio" id="yes" value="yes" name="stay" checked />
+                        <label for="yes">Yes</label>
+                        <input type="radio" id="no" value="no" name="stay" />
+                        <label for="no">No</label>
+                </fieldset>
+                <br>
+                <input type="submit" value="Send" />
+            </form>
         </main>
     </body>
 
     <footer>
-        <p>Cpoywrite @barrran 2024</p>
+        <p>Copywrite @barrran 2024</p>
     </footer>
 
 </html>
