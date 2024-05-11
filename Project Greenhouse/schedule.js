@@ -29,6 +29,12 @@ function turnOffFan() {
     return fan;
 };
 
+function controlFan() {
+    turnOnFan();
+    const duration = 15 * 60 * 1000;
+    setTimeout(()=>{turnOffFan();}, duration);
+};
+
 
 //UV light operation function
 
@@ -66,6 +72,16 @@ function controlHeater() {
     setTimeout(()=>{turnOffHeat();}, duration);
 };
 
-//Use setInterval to prevent over run of the heater ----> modify to use if/else instead of setinterval.
+//Control flow logic goes here:
 
-setInterval(() => {turnOffHeat();}, 60 * 1000);
+function runGreenHouse () {
+    const startDate = new Date;
+    const startTime = getTime();
+    console.log(`The current date is ${startDate}`);
+    console.log("Default settings are as follows:");
+    console.log("1. Lights on for 18 hours and off for 6 hours.");
+    console.log("2. Fan on for 15mins every 60mins.");
+    console.log("3. Heater on at 20 DegC and off at 24 DegC.");
+};
+
+runGreenHouse();
