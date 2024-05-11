@@ -108,15 +108,27 @@ function runGreenHouse () {
 
  //Calculate heater on and off times, manage temperature.
  
-    if (lowTemp) {
+    if (lowTemp > temperature) {
         turnOnHeat();
-        for(i=0, i>hiTemp, i++);
-        
+        console.log(`the current temperature reading is ${temperature}`);
+        if(temperature !== hiTemp) {
+        for (let i = 0; i <= hiTemp; i++) {
+            temperature = i;
+            console.log(`Current Temperature: ${temperature}`);
+        }
+    } else {
+        console.log("Temperature is in correct range");
+    }
+
     } else {
         turnOffHeat();
     }
 
+    console.log(`The updated temperature is ${temperature}`);
 
 };
+
+
+//Starts and runs greenHouse function.
 
 runGreenHouse();
