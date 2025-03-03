@@ -58,3 +58,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+// ... (Your existing JavaScript code)
+
+document.getElementById('checkout').addEventListener('click', async function() {
+    const total = parseFloat(document.getElementById('cart-total').textContent) * 100; // Stripe uses cents
+    try {
+        const response = await fetch('/create-payment-intent', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ amount: total, currency: 'usd' }), //change currency if needed
+        });
+        const { clientSecret } = await response.json();
+
+        const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY'); //add publishable key.
+
+        const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: stripe.elements().getElement('card'), // if using stripe elements, or get card details from a different form.
+            },
+        });
+
+        if (error) {
+            console.error(error.message);
+            alert('Payment failed: ' + error.message);
+        } else {
+            console.log('Payment successful:', paymentIntent);
+            alert('Payment successful!');
+            // Clear the cart, update order status, etc.
+        }
+    } catch (error) {
+        console.error('Error processing payment:', error);
+        alert('An error occurred during payment.');
+    }
+});
+
+// Create Stripe Elements (If you're using Stripe's pre-built UI)
+const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY');
+const elements = stripe.elements();
+const card = elements.create('card');
+card.mount('#card-element'); //place where card element will mount.
